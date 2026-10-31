@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#063b55">
+<title>FIQAR JOKI ELITE</title>
+<style>
+:root{
+  --navy:#062f45; --teal:#07566a; --cyan:#16c9ee; --ice:#dffaff;
+  --blue:#168bdb; --green:#18b96b; --lime:#a6e84c; --purple:#8c69d8;
+  --gold:#f5cb55; --white:#fff; --ink:#102c39; --muted:#617985;
+  --line:#d8edf1; --shadow:0 14px 38px rgba(3,54,75,.13);
+}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--ink);
+ background:radial-gradient(circle at 10% 5%,#d8fbff 0,transparent 28%),radial-gradient(circle at 95% 18%,#e8ffdb 0,transparent 24%),linear-gradient(145deg,#faffff,#eafaff 48%,#f5fff1)}
+button,input,select,textarea{font:inherit} button{cursor:pointer}
+.wrap{width:min(1080px,calc(100% - 28px));margin:auto}
+header{padding:16px 0;background:linear-gradient(110deg,var(--navy),var(--teal),#087b91);color:white;border-bottom:3px solid var(--cyan)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:11px}.mark{width:46px;height:46px;border-radius:15px;background:linear-gradient(140deg,var(--cyan),var(--green),var(--gold));display:grid;place-items:center;color:var(--navy);font-weight:1000;font-size:20px;box-shadow:0 0 20px #21d7ef66}
+.brand b{display:block;font-size:17px;letter-spacing:.7px}.brand small{color:#c9f7ff}
+.pill{border:1px solid #9deeff;color:#e6fcff;padding:8px 12px;border-radius:99px;font-size:12px}
+.hero{margin:22px 0 18px;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(120deg,#06364e 0%,#08718a 45%,#16a9a4 72%,#8acb50 100%);color:#fff;box-shadow:var(--shadow)}
+.hero:before,.hero:after{content:"";position:absolute;border:2px solid #a6f4ff88;border-radius:50%;width:260px;height:260px;right:-70px;top:-120px;box-shadow:0 0 0 18px #27c9e522,0 0 0 38px #a5ef4a18}
+.hero:after{width:130px;height:130px;right:28%;top:auto;bottom:-90px;border-color:#f6d66b88}
+.hero-inner{position:relative;z-index:1;padding:30px 25px;max-width:690px}
+.eyebrow{color:#b9ffeb;font-weight:800;letter-spacing:2px;font-size:11px}
+h1{font-size:clamp(29px,6vw,48px);line-height:1.02;margin:9px 0 10px;letter-spacing:-1.5px}
+h1 span{color:var(--gold);text-shadow:2px 3px 0 #173c46}
+.hero p{color:#e3fbff;max-width:520px;margin:0 0 18px}
+.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:850;background:linear-gradient(110deg,var(--gold),#ffeaa2);color:#263b3e;box-shadow:0 5px 0 #a67d2d}
+.btn.secondary{background:linear-gradient(110deg,var(--cyan),#c4f8ff);box-shadow:0 5px 0 #087b91;color:#06384c}
+.btn.green{background:linear-gradient(110deg,var(--green),var(--lime));box-shadow:0 5px 0 #087c4a;color:#073d2a}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:18px}
+.card{background:#ffffffed;border:1px solid var(--line);border-radius:21px;padding:19px;box-shadow:var(--shadow)}
+.card h2{margin:0 0 5px;color:var(--navy);font-size:19px}.sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+label{display:block;font-weight:750;font-size:13px;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #c7e4eb;border-radius:12px;background:#f9feff;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #168bdb20}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.note{font-size:12px;color:var(--muted);line-height:1.5}
+.pricebox{margin:14px 0;padding:15px;border-radius:15px;background:linear-gradient(120deg,#e2faff,#efffe9);border:1px solid #b8edf0}
+.pricebox strong{display:block;font-size:25px;color:#087b69}
+.paytag{display:inline-block;background:#f4edff;color:#6546a5;border-radius:99px;padding:6px 10px;font-size:11px;font-weight:800;margin:3px 3px 3px 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.status{display:inline-block;border-radius:99px;padding:5px 9px;background:#fff4d5;color:#805c0b;font-size:11px;font-weight:800}
+.history-item{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.history-item:last-child{border:0}
+.empty{padding:22px;text-align:center;color:var(--muted);background:#f5fcfd;border-radius:13px;font-size:13px}
+footer{text-align:center;color:#68808a;font-size:12px;padding:20px 0 30px}
+.color-dots{display:flex;gap:7px;margin-top:15px}.dot{width:18px;height:18px;border-radius:50%;border:2px solid white;box-shadow:0 0 0 1px #b6d5dc}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.hero-inner{padding:25px 19px}.top{align-items:flex-start}.pill{font-size:10px}.row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <div class="brand"><div class="mark">FE</div><div><b>FIQAR JOKI ELITE</b><small>JOKI KONTAK WHATSAPP</small></div></div>
+  <div class="pill">✦ MURAH • AMAN • TERPERCAYA</div>
+</div></header>
+<main class="wrap">
+<section class="hero"><div class="hero-inner">
+  <div class="eyebrow">WELCOME TO FIQAR JOKI ELITE</div>
+  <h1>JOKI KONTAK<br><span>WHATSAPP</span></h1>
+  <p>Pesan layanan dengan mudah. Isi detail pesanan, cek total biaya, lalu konfirmasi melalui WhatsApp CS.</p>
+  <button class="btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">BUAT PESANAN ↘</button>
+  <div class="color-dots"><i class="dot" style="background:#16c9ee"></i><i class="dot" style="background:#168bdb"></i><i class="dot" style="background:#18b96b"></i><i class="dot" style="background:#a6e84c"></i><i class="dot" style="background:#8c69d8"></i><i class="dot" style="background:#f5cb55"></i><i class="dot" style="background:#062f45"></i><i class="dot" style="background:#fff"></i></div>
+</div></section>
+<section class="grid">
+  <div class="card" id="order">
+    <h2>📝 Form Pemesanan</h2><p class="sub">Lengkapi data pesanan dengan benar.</p>
+    <label>Nama pelanggan</label><input id="customer" placeholder="Masukkan nama kamu">
+    <div class="row">
+      <div><label>Nomor WhatsApp</label><input id="phone" inputmode="tel" placeholder="08xxxxxxxxxx"></div>
+      <div><label>Jumlah kontak</label><input id="qty" type="number" min="1" value="100" oninput="calc()"></div>
+    </div>
+    <label>Jenis layanan</label><select id="service" onchange="calc()"><option value="0">Pilih layanan / harga diatur CS</option><option value="1000">Paket sesuai kesepakatan — Rp1.000 (contoh)</option></select>
+    <label>Catatan pesanan</label><textarea id="details" rows="3" placeholder="Tulis detail pesanan. Pastikan kontak yang diproses memang kamu miliki izinnya."></textarea>
+    <div class="pricebox"><span class="note">Estimasi total</span><strong id="total">Hubungi CS</strong><span class="note">Harga final dikonfirmasi CS sebelum pembayaran.</span></div>
+    <label>Metode pembayaran</label><div><span class="paytag">TRANSFER BANK</span><span class="paytag">QRIS</span></div>
+    <label>Upload bukti pembayaran</label><input id="proof" type="file" accept="image/*">
+    <p class="note">Bukti pembayaran hanya ditampilkan sebagai pratinjau di perangkat ini. Jangan unggah data sensitif.</p>
+    <div class="actions"><button class="btn green" onclick="placeOrder()">KIRIM PESANAN</button><button class="btn secondary" onclick="contactCS()">CHAT CS</button></div>
+  </div>
+  <aside class="card">
+    <h2>💳 Pembayaran</h2><p class="sub">Transfer + QRIS</p>
+    <div class="pricebox"><b>Transfer Bank</b><p class="note">Nama bank dan nomor rekening akan diberikan oleh CS saat konfirmasi.</p></div>
+    <div class="pricebox"><b>QRIS</b><p class="note">Minta kode QRIS resmi kepada CS sebelum membayar.</p></div>
+    <h2 style="margin-top:20px">📦 Status Pesanan</h2><p class="sub">Pantau riwayat pesanan di bawah ini.</p>
+    <div id="history"><div class="empty">Belum ada pesanan. Pesananmu akan tampil di sini setelah dibuat.</div></div>
+  </aside>
+</section>
+</main>
+<footer>© 2026 FIQAR JOKI ELITE · Gunakan layanan secara bertanggung jawab dan hanya untuk kontak yang memiliki izin.</footer>
+<script>
+const CS_NUMBER = "GANTI_DENGAN_NOMOR_CS"; // Format internasional tanpa +, contoh 62812xxxx
+function calc(){
+ const qty=Math.max(0,Number(document.getElementById('qty').value)||0);
+ const price=Number(document.getElementById('service').value);
+ document.getElementById('total').textContent=price?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(qty*price):'Hubungi CS';
+}
+function contactCS(){
+ if(CS_NUMBER.includes("GANTI")){alert("Nomor WhatsApp CS belum diatur. Ganti CS_NUMBER di bagian script website.");return;}
+ window.open("https://wa.me/"+CS_NUMBER+"?text="+encodeURIComponent("Halo FIQAR JOKI ELITE, saya ingin bertanya tentang layanan joki kontak."),"_blank");
+}
+function placeOrder(){
+ const name=document.getElementById('customer').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const qty=Number(document.getElementById('qty').value);
+ const service=document.getElementById('service').value;
+ if(!name||!phone||!qty||qty<1){alert("Lengkapi nama, nomor WhatsApp, dan jumlah kontak.");return;}
+ const order={id:"FJE"+Date.now().toString().slice(-7),name,phone,qty,service,details:document.getElementById('details').value,status:"Menunggu konfirmasi CS",date:new Date().toLocaleString('id-ID')};
+ const data=JSON.parse(localStorage.getItem('fje_orders')||"[]");data.unshift(order);localStorage.setItem('fje_orders',JSON.stringify(data));render();
+ const message=`Halo FIQAR JOKI ELITE, saya ingin membuat pesanan.\nID: ${order.id}\nNama: ${name}\nNomor: ${phone}\nJumlah kontak: ${qty}\nCatatan: ${order.details||"-"}\nMohon konfirmasi harga dan pembayaran.`;
+ if(!CS_NUMBER.includes("GANTI"))window.open("https://wa.me/"+CS_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+ else alert("Pesanan tersimpan di riwayat perangkat ini. Atur nomor CS di kode website untuk mengirim WhatsApp.");
+}
+function render(){
+ const data=JSON.parse(localStorage.getItem('fje_orders')||"[]"), el=document.getElementById('history');
+ if(!data.length){el.innerHTML='<div class="empty">Belum ada pesanan.</div>';return;}
+ el.innerHTML=data.map(o=>`<div class="history-item"><b>${o.id}</b> · ${o.qty} kontak<br><span class="status">${o.status}</span><br><span class="note">${o.date}</span></div>`).join('');
+}
+render();calc();
+</script>
+</body></html>
